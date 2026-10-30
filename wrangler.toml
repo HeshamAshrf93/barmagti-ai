@@ -1,0 +1,22 @@
+name = "barmagti-ai"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+FIREBASE_PROJECT_ID = "barmagti-platform"
+ALLOWED_ORIGINS = "https://barmagti-platform.web.app,https://barmagti-platform.firebaseapp.com,http://localhost:5000,http://127.0.0.1:5500"
+DAILY_LIMIT = "40"
+# أقل تشابه عشان القطعة تتحسب من المنهج (ارفعه لو المساعد بيجيب حاجات مش مرتبطة)
+MIN_SCORE = "0.5"
+CHAT_MODEL = "gemini-flash-latest"
+
+# اعمل الـ KV بالأمر: npx wrangler kv namespace create RAG_KV
+# وحط الـ id اللي يطلعلك هنا
+[[kv_namespaces]]
+binding = "RAG_KV"
+id = "PUT_YOUR_KV_ID_HERE"
+
+# الأسرار متتحطش هنا (الريبو public). استخدم:
+# npx wrangler secret put GEMINI_API_KEY
+# npx wrangler secret put TEACHER_EMAILS   (إيميلات المعلم مفصولة بفاصلة)

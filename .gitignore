@@ -1,0 +1,6 @@
+node_modules
+dist
+.dev.vars
+.wrangler
+index.json
+test/index.test.json

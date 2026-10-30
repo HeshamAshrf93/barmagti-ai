@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>برمجتي AI — تجربة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>body{font-family:Cairo,sans-serif;background:#f9fafb;margin:0;padding:24px 16px}#ai-box{margin:auto;max-width:820px}</style>
+</head>
+<body>
+  <h2 style="text-align:center">برمجتي AI 🤖</h2>
+  <div id="ai-box">جاري تسجيل الدخول…</div>
+
+  <script src="barmagti-ai.js"></script>
+  <script type="module">
+    // نفس firebaseConfig اللي في المنصة (ده عادي يكون في الواجهة، مش سر)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+    const app = initializeApp({ /* حط firebaseConfig بتاع المنصة هنا */ });
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) return (document.getElementById("ai-box").textContent = "سجّل دخول من المنصة الأول");
+      BarmagtiAI.mount(document.getElementById("ai-box"), {
+        apiUrl: "https://barmagti-ai.YOUR-SUBDOMAIN.workers.dev",
+        getToken: () => user.getIdToken(),
+      });
+    });
+  </script>
+</body>
+</html>
