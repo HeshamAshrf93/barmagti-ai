@@ -1,5 +1,7 @@
 # Barmagti AI Tutor — curriculum RAG with evals
 
+![Barmagti AI Tutor: answers with sources, 99% Hit@4](docs/cover.jpg)
+
 The "Ask the teacher" assistant inside **[Barmagti](https://barmagti.abp-ai.org)**, a live self-study platform for the Egyptian
 Grade-10 *Programming & AI* curriculum (12 units, 50 lessons). Students ask in Egyptian Arabic; the tutor answers from the
 curriculum only, in Egyptian Arabic, and shows where each answer came from (lesson, card, textbook pages, one-click link).
