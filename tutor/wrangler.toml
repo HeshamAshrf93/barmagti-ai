@@ -1,0 +1,17 @@
+name = "barmagti-tutor"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+preview_urls = false
+
+[ai]
+binding = "AI"
+
+# البحث في المنهج (RAG). اتعمل بـ: npx wrangler vectorize create barmagti-curriculum --dimensions=1024 --metric=cosine
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "barmagti-curriculum"
+
+# اتظبط بالـ evals على Gemini embeddings: أسئلة المنهج من 0.61، والأسئلة اللي برا لحد 0.59
+[vars]
+RAG_minScore = "0.57"

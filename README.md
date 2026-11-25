@@ -5,6 +5,10 @@ Two LLM features for **[Barmagti](https://barmagti-platform.web.app)**, an e-lea
 1. **Study assistant (RAG):** answers student questions **only from the official curriculum**, cites the source lesson, and says "ask your teacher" instead of hallucinating when nothing relevant is found.
 2. **Homework grader:** compares the student's answer with the teacher's model answer and rubric, and returns a structured score + strengths + mistakes with hints + next step, **without revealing the solution**.
 
+> **New — [`tutor/`](tutor/): the live "Ask the teacher" RAG tutor** on [barmagti.abp-ai.org](https://barmagti.abp-ai.org):
+> Gemini embeddings + Cloudflare Vectorize + hybrid re-ranking, sources under every answer, and an 80-question eval suite
+> (Hit@4 99%, 98% faithful, 100% on off-topic and prompt-injection tests). See [`tutor/README.md`](tutor/README.md).
+
 ## Architecture
 
 ```

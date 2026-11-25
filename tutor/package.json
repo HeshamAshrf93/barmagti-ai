@@ -1,0 +1,10 @@
+{
+  "name": "barmagti-tutor",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "reindex": "node evals/run.mjs --reindex",
+    "eval": "node evals/run.mjs --budget 3600"
+  }
+}
